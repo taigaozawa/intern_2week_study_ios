@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOv-YH-dfQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--課題1-->
+        <scene sceneID="EQi-ka-bCN">
+            <objects>
+                <viewController storyboardIdentifier="Question1" title="課題1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HOv-YH-dfQ" customClass="Question1ViewController" customModule="intern_2week_study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AJf-tg-maZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3cK-wX-M8f"/>
+                                    <constraint firstAttribute="width" constant="240" id="uho-Ff-ZhJ"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
+                                <rect key="frame" x="87" y="240" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5AL-sw-TZo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
+                                <rect key="frame" x="87" y="314" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="0PX-k5-h7v"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="5CN-E1-JLh"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="40" id="7sh-Zw-yFY"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="40" id="9S7-3c-cYn"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="a4S-bN-by9"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="l5m-Al-GqV"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerY" secondItem="AJf-tg-maZ" secondAttribute="centerY" id="qxP-vA-nDO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tUl-ih-lXm"/>
+                    </view>
+                    <connections>
+                        <outlet property="addTextButton" destination="mcD-4C-Lu1" id="mCX-sP-Nbt"/>
+                        <outlet property="textField" destination="SAC-3D-GIS" id="kBt-tg-yHt"/>
+                        <outlet property="textView" destination="h1I-2B-V7f" id="dkf-fw-Acv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nhm-ii-iwx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314" y="66"/>
+        </scene>
+    </scenes>
+</document>
