@@ -8,7 +8,6 @@ final class Question1ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textFieldWarning: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 起動時に textView を空にする
