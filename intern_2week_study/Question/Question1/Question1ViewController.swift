@@ -13,8 +13,13 @@ final class Question1ViewController: UIViewController {
         textView.text = ""
         textField.delegate = self
     }
+    
+    // MARK: Action
     @IBAction func addText(_ sender: UIButton) {
         self.textFieldDidEndEditing(textField)
+    }
+    @IBAction func clearText(_ sender: UIButton) {
+        textView.text = ""
     }
     
 }
