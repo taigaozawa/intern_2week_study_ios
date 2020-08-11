@@ -18,7 +18,15 @@ final class Question1ViewController: UIViewController {
     
     // MARK: Action
     @IBAction func addText(_ sender: UIButton) {
-        self.textFieldDidEndEditing(textField)
+        if let newText = textField.text {
+            if newText != "" {
+                textView.text += newText + "\n" // 改行して追加
+                textField.text = "" // 入力するごとに textField を空にする
+                textFieldWarning.isHidden = true
+            } else {
+                textFieldWarning.isHidden = false
+            }
+        }
     }
     @IBAction func clearText(_ sender: UIButton) {
         textView.text = ""
@@ -33,19 +41,6 @@ extension Question1ViewController: UITextFieldDelegate {
         // キーボードを隠す
         textField.resignFirstResponder() // FirstResponder を解除
         return true
-    }
-    // FirstResponder が解除された後に呼び出されるメソッド
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // textField に入力されたテキストを textView に改行して表示
-        if let newText = textField.text {
-            if newText != "" {
-                textView.text += newText + "\n" // 改行して追加
-                textField.text = "" // 入力するごとに textField を空にする
-                textFieldWarning.isHidden = true
-            } else {
-                textFieldWarning.isHidden = false
-            }
-        }
     }
     
 }
