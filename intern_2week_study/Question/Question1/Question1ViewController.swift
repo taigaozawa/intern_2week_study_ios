@@ -31,8 +31,10 @@ extension Question1ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         // textField に入力されたテキストを textView に改行して表示
         if let newText = textField.text {
-            textView.text += newText + "\n" // 改行して追加
-            textField.text = "" // 入力するごとに textField を空にする
+            if newText != "" {
+                textView.text += newText + "\n" // 改行して追加
+                textField.text = "" // 入力するごとに textField を空にする
+            }
         }
     }
     
