@@ -16,106 +16,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="noW-Ek-27c">
-                                <rect key="frame" x="30" y="100" width="240" height="242"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="n5r-zt-mGP">
+                                <rect key="frame" x="0.0" y="80" width="375" height="300.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CSi-7F-rCN">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="242"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="k3R-eE-fye">
+                                        <rect key="frame" x="67.5" y="0.0" width="240" height="55.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xus-UB-LzA">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="242"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cEQ-3g-mEr">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Cze-ZZ-jQG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="242"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tFo-ZX-eU8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="102"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="siX-Oe-DkM">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
-                                                                        <subviews>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="テキストを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="240" id="5AL-sw-TZo"/>
-                                                                                </constraints>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                                                            </textField>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-uQ-edW">
-                                                                        <rect key="frame" x="0.0" y="42" width="240" height="60"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="240" id="0PX-k5-h7v"/>
-                                                                                </constraints>
-                                                                                <state key="normal" title="テキストを追加する"/>
-                                                                                <connections>
-                                                                                    <action selector="addText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="SD3-2R-r7x"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moE-T2-eyH">
-                                                                                <rect key="frame" x="81.5" y="30" width="77" height="30"/>
-                                                                                <state key="normal" title="すべて消去">
-                                                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                </state>
-                                                                                <connections>
-                                                                                    <action selector="clearText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="jZU-Aa-aIg"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0ak-SI-w2y">
-                                                                <rect key="frame" x="0.0" y="114" width="240" height="128"/>
-                                                                <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="128" id="3cK-wX-M8f"/>
-                                                                            <constraint firstAttribute="width" constant="240" id="uho-Ff-ZhJ"/>
-                                                                        </constraints>
-                                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                    </textView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="テキストを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="240" id="5AL-sw-TZo"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Cze-ZZ-jQG" firstAttribute="leading" secondItem="xus-UB-LzA" secondAttribute="leading" id="a8r-yU-jlv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Cze-ZZ-jQG" secondAttribute="trailing" id="wmL-xd-vym"/>
-                                                </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文字を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubQ-NR-2bY">
+                                                <rect key="frame" x="0.0" y="41" width="135" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="BT9-4n-Cgb">
+                                        <rect key="frame" x="67.5" y="83.5" width="240" height="61"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="0PX-k5-h7v"/>
+                                                </constraints>
+                                                <state key="normal" title="テキストを追加する"/>
+                                                <connections>
+                                                    <action selector="addText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="SD3-2R-r7x"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moE-T2-eyH">
+                                                <rect key="frame" x="81.5" y="31" width="77" height="30"/>
+                                                <state key="normal" title="すべて消去">
+                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="jZU-Aa-aIg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
+                                        <rect key="frame" x="67.5" y="172.5" width="240" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="3cK-wX-M8f"/>
+                                            <constraint firstAttribute="width" constant="240" id="uho-Ff-ZhJ"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="k3R-eE-fye" firstAttribute="top" secondItem="n5r-zt-mGP" secondAttribute="top" constant="100" id="1Jv-oa-fem"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="tUl-ih-lXm" firstAttribute="trailing" secondItem="noW-Ek-27c" secondAttribute="trailing" constant="30" id="TKE-la-GnK"/>
-                            <constraint firstItem="noW-Ek-27c" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="30" id="lDv-es-v1Y"/>
-                            <constraint firstItem="noW-Ek-27c" firstAttribute="top" secondItem="tUl-ih-lXm" secondAttribute="top" constant="100" id="njd-HR-bRF"/>
+                            <constraint firstItem="n5r-zt-mGP" firstAttribute="leading" secondItem="AJf-tg-maZ" secondAttribute="leading" id="7Wf-b0-3dS"/>
+                            <constraint firstItem="tUl-ih-lXm" firstAttribute="trailing" secondItem="n5r-zt-mGP" secondAttribute="trailing" id="8uC-pO-k3a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tUl-ih-lXm"/>
                     </view>
                     <connections>
                         <outlet property="addTextButton" destination="mcD-4C-Lu1" id="mCX-sP-Nbt"/>
                         <outlet property="textField" destination="SAC-3D-GIS" id="kBt-tg-yHt"/>
+                        <outlet property="textFieldWarning" destination="ubQ-NR-2bY" id="1zH-aH-hI9"/>
                         <outlet property="textView" destination="h1I-2B-V7f" id="dkf-fw-Acv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhm-ii-iwx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="66"/>
+            <point key="canvasLocation" x="-314.39999999999998" y="65.217391304347828"/>
         </scene>
     </scenes>
 </document>

@@ -6,11 +6,14 @@ final class Question1ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addTextButton: UIButton!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textFieldWarning: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // 起動時に textView を空にする
         textView.text = ""
+        textFieldWarning.isHidden = true
         textField.delegate = self
     }
     
@@ -39,6 +42,9 @@ extension Question1ViewController: UITextFieldDelegate {
             if newText != "" {
                 textView.text += newText + "\n" // 改行して追加
                 textField.text = "" // 入力するごとに textField を空にする
+                textFieldWarning.isHidden = true
+            } else {
+                textFieldWarning.isHidden = false
             }
         }
     }
