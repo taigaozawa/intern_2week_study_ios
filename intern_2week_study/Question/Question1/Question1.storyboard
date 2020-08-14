@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOv-YH-dfQ">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,56 +11,84 @@
             <objects>
                 <viewController storyboardIdentifier="Question1" title="課題1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HOv-YH-dfQ" customClass="Question1ViewController" customModule="intern_2week_study" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AJf-tg-maZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="textView" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
+                                <rect key="frame" x="10" y="189" width="580" height="386"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="3cK-wX-M8f"/>
-                                    <constraint firstAttribute="width" constant="240" id="uho-Ff-ZhJ"/>
-                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
-                                <rect key="frame" x="87" y="240" width="240" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5AL-sw-TZo"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="テキストを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
+                                <rect key="frame" x="10" y="40" width="580" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
-                                <rect key="frame" x="87" y="314" width="240" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文字を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubQ-NR-2bY">
+                                <rect key="frame" x="15" y="79" width="570" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="0PX-k5-h7v"/>
+                                    <constraint firstAttribute="height" constant="15" id="23E-v2-uq3"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
+                                <rect key="frame" x="10" y="104" width="580" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tki-Mh-cFf"/>
+                                </constraints>
+                                <state key="normal" title="テキストを追加する"/>
+                                <connections>
+                                    <action selector="addTextButtonTapped:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="SD3-2R-r7x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moE-T2-eyH">
+                                <rect key="frame" x="10" y="139" width="580" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Z6m-9L-6iA"/>
+                                </constraints>
+                                <state key="normal" title="すべて消去">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearTextButtonTapped:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="jZU-Aa-aIg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="5CN-E1-JLh"/>
-                            <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="40" id="7sh-Zw-yFY"/>
-                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="40" id="9S7-3c-cYn"/>
-                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="a4S-bN-by9"/>
-                            <constraint firstItem="SAC-3D-GIS" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="l5m-Al-GqV"/>
-                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerY" secondItem="AJf-tg-maZ" secondAttribute="centerY" id="qxP-vA-nDO"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="10" id="5HP-oH-hH4"/>
+                            <constraint firstItem="ubQ-NR-2bY" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="5" id="6c9-FB-VHY"/>
+                            <constraint firstItem="ubQ-NR-2bY" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="15" id="9cS-Et-2MK"/>
+                            <constraint firstItem="tUl-ih-lXm" firstAttribute="trailing" secondItem="h1I-2B-V7f" secondAttribute="trailing" constant="10" id="And-30-Sza"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="moE-T2-eyH" secondAttribute="bottom" constant="20" id="JMB-f4-3JK"/>
+                            <constraint firstItem="tUl-ih-lXm" firstAttribute="trailing" secondItem="ubQ-NR-2bY" secondAttribute="trailing" constant="15" id="RsC-aB-ef4"/>
+                            <constraint firstItem="tUl-ih-lXm" firstAttribute="trailing" secondItem="SAC-3D-GIS" secondAttribute="trailing" constant="10" id="Uex-Ee-4bE"/>
+                            <constraint firstItem="tUl-ih-lXm" firstAttribute="bottom" secondItem="h1I-2B-V7f" secondAttribute="bottom" constant="25" id="aNg-wX-NqQ"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="10" id="dwv-FS-6qO"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="top" secondItem="tUl-ih-lXm" secondAttribute="top" constant="40" id="h4v-mS-laf"/>
+                            <constraint firstItem="moE-T2-eyH" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="10" id="i3i-jJ-n0K"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="ubQ-NR-2bY" secondAttribute="bottom" constant="10" id="iOp-da-dTu"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="10" id="kCk-Re-GOE"/>
+                            <constraint firstItem="tUl-ih-lXm" firstAttribute="trailing" secondItem="mcD-4C-Lu1" secondAttribute="trailing" constant="10" id="lTa-87-ZSN"/>
+                            <constraint firstItem="tUl-ih-lXm" firstAttribute="trailing" secondItem="moE-T2-eyH" secondAttribute="trailing" constant="10" id="oWg-Ao-4A1"/>
+                            <constraint firstItem="moE-T2-eyH" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="5" id="oYo-OX-1Mi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tUl-ih-lXm"/>
                     </view>
                     <connections>
                         <outlet property="addTextButton" destination="mcD-4C-Lu1" id="mCX-sP-Nbt"/>
                         <outlet property="textField" destination="SAC-3D-GIS" id="kBt-tg-yHt"/>
+                        <outlet property="textFieldWarningLabel" destination="ubQ-NR-2bY" id="1zH-aH-hI9"/>
                         <outlet property="textView" destination="h1I-2B-V7f" id="dkf-fw-Acv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhm-ii-iwx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="66"/>
+            <point key="canvasLocation" x="-314.39999999999998" y="65.217391304347828"/>
         </scene>
     </scenes>
 </document>
