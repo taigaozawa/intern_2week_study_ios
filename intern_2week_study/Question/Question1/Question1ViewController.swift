@@ -17,7 +17,7 @@ final class Question1ViewController: UIViewController {
     }
     
     // MARK: Action
-    @IBAction func addText(_ sender: UIButton) {
+    @IBAction func addTextButtonTapped(_ sender: UIButton) {
         if let newText = textField.text {
             if newText != "" {
                 textView.text += newText + "\n" // 改行して追加

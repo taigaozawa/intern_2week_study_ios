@@ -42,7 +42,7 @@
                                 </constraints>
                                 <state key="normal" title="テキストを追加する"/>
                                 <connections>
-                                    <action selector="addText:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="SD3-2R-r7x"/>
+                                    <action selector="addTextButtonTapped:" destination="HOv-YH-dfQ" eventType="touchUpInside" id="SD3-2R-r7x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moE-T2-eyH">
