@@ -9,7 +9,7 @@ final class Question2ViewController: UIViewController {
     
     private let areaImages: [String] = [
         "https://uub.jp/47/ibaraki/ibaraki_kensho.png",
-        "https://uub.jp/47/tochigi/tochigi_kensho.png",
+        "https://kunitori-jp.net/wp-content/uploads/2019/03/symbol_tochigi.jpg",
         "https://uub.jp/47/gunma/gunma_monsho.png",
         "https://uub.jp/47/saitama/saitama_kensho.png",
         "https://uub.jp/47/chiba/chiba_kensho.png",
