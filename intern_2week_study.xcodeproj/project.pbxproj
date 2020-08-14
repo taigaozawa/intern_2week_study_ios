@@ -37,6 +37,7 @@
 		08C9DD8F24E0162200459724 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C9DD8E24E0162200459724 /* Search.storyboard */; };
 		08C9DD9124E0163E00459724 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C9DD9024E0163E00459724 /* SearchViewController.swift */; };
 		08EF05C524C37A6600129792 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083FD71524C34D2300383122 /* Rswift.framework */; };
+		30F419E724E7464E009C42FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F419E624E7464E009C42FD /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		08C9DD8824DF0CBE00459724 /* Question2Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Question2Cell.xib; sourceTree = "<group>"; };
 		08C9DD8E24E0162200459724 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		08C9DD9024E0163E00459724 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		30F419E624E7464E009C42FD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				08C9DD8E24E0162200459724 /* Search.storyboard */,
+				30F419E624E7464E009C42FD /* ResultViewController.swift */,
 				08C9DD9024E0163E00459724 /* SearchViewController.swift */,
 			);
 			path = Search;
@@ -431,6 +434,7 @@
 				082CF76124D56DE4001F7680 /* SampleSearchViewController.swift in Sources */,
 				08C9DD8924DF0CBE00459724 /* Question2Cell.swift in Sources */,
 				086F846524D997A00084571E /* UIAlertController+Extensions.swift in Sources */,
+				30F419E724E7464E009C42FD /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

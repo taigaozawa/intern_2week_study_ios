@@ -7,6 +7,8 @@ final class SearchViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var textFieldWarningLabel: UILabel!
     
+    var keyWord = ""
+    
     // 複数回検索防止のためのチェック
     var isFirstSearch = true
     
@@ -38,9 +40,10 @@ extension SearchViewController: UITextFieldDelegate {
         
         // キーボードを隠す
         textField.resignFirstResponder() // FirstResponder を解除
-        guard let keyWord = textField.text else {
+        guard let textFieldText = textField.text else {
             return true
         }
+        keyWord = textFieldText
         if keyWord.isEmpty {
             textFieldWarningLabel.isHidden = false
         } else {
@@ -54,6 +57,14 @@ extension SearchViewController: UITextFieldDelegate {
     // キーワード検索を実行するメソッド
     func search(_ keyWord: String) {
         print("キーワードは「" + keyWord + "」です。")
+        self.performSegue(withIdentifier: "toResult", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResult" {
+            let next = segue.destination as? ResultViewController
+            next?.sentKeyWord = self.keyWord
+        }
     }
     
 }

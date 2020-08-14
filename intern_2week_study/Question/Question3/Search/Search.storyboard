@@ -62,11 +62,28 @@
                         <outlet property="searchButton" destination="esd-6o-kzv" id="Yve-7W-1eg"/>
                         <outlet property="textField" destination="DGW-gX-GvW" id="fRT-SN-Y2T"/>
                         <outlet property="textFieldWarningLabel" destination="zOy-OJ-D3t" id="EU7-TI-0oi"/>
+                        <segue destination="r2r-29-0WR" kind="show" identifier="toResult" id="tBS-KI-0yR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfg-6f-mrj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="hSa-N6-uWy">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="r2r-29-0WR" customClass="ResultViewController" customModule="intern_2week_study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9S-nC-LM6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Z5D-84-xka"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wnB-ts-GKb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpN-Vw-xs8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="121"/>
         </scene>
     </scenes>
 </document>
