@@ -22,6 +22,7 @@ final class Question2ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "Question2Cell", bundle: nil), forCellReuseIdentifier: "question2Cell")
+        tableView.rowHeight = 50
     }
 }
 
