@@ -30,7 +30,7 @@ final class Question1ViewController: UIViewController {
         }
     }
     
-    @IBAction func clearText(_ sender: UIButton) {
+    @IBAction func clearTextButtonTapped(_ sender: UIButton) {
         textView.text = ""
     }
     
