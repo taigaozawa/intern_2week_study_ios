@@ -62,8 +62,10 @@ extension SearchViewController: UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResult" {
-            let next = segue.destination as? ResultViewController
-            next?.sentKeyWord = self.keyWord
+            guard let next = segue.destination as? ResultViewController else {
+                return
+            }
+            next.sentKeyWord = self.keyWord
         }
     }
     
