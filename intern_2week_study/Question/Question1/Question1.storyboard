@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOv-YH-dfQ">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,23 +11,23 @@
             <objects>
                 <viewController storyboardIdentifier="Question1" title="課題1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HOv-YH-dfQ" customClass="Question1ViewController" customModule="intern_2week_study" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AJf-tg-maZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="textView" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
-                                <rect key="frame" x="10" y="189" width="355" height="453"/>
+                                <rect key="frame" x="10" y="189" width="580" height="386"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="テキストを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
-                                <rect key="frame" x="10" y="40" width="355" height="34"/>
+                                <rect key="frame" x="10" y="40" width="580" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文字を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubQ-NR-2bY">
-                                <rect key="frame" x="15" y="79" width="345" height="15"/>
+                                <rect key="frame" x="15" y="79" width="570" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="23E-v2-uq3"/>
                                 </constraints>
@@ -38,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
-                                <rect key="frame" x="10" y="104" width="355" height="30"/>
+                                <rect key="frame" x="10" y="104" width="580" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="tki-Mh-cFf"/>
                                 </constraints>
@@ -48,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moE-T2-eyH">
-                                <rect key="frame" x="10" y="139" width="355" height="30"/>
+                                <rect key="frame" x="10" y="139" width="580" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Z6m-9L-6iA"/>
                                 </constraints>
@@ -84,7 +82,7 @@
                     <connections>
                         <outlet property="addTextButton" destination="mcD-4C-Lu1" id="mCX-sP-Nbt"/>
                         <outlet property="textField" destination="SAC-3D-GIS" id="kBt-tg-yHt"/>
-                        <outlet property="textFieldWarning" destination="ubQ-NR-2bY" id="1zH-aH-hI9"/>
+                        <outlet property="textFieldWarningLabel" destination="ubQ-NR-2bY" id="1zH-aH-hI9"/>
                         <outlet property="textView" destination="h1I-2B-V7f" id="dkf-fw-Acv"/>
                     </connections>
                 </viewController>
