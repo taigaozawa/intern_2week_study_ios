@@ -21,7 +21,7 @@ final class Question1ViewController: UIViewController {
         guard let newText = textField.text else {
             return
         }
-        if newText == "" {
+        if newText.isEmpty {
             textFieldWarningLabel.isHidden = false
         } else {
             textView.text += newText + "\n" // 改行して追加
