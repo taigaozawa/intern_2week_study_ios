@@ -21,12 +21,12 @@ final class Question1ViewController: UIViewController {
         guard let newText = textField.text else {
             return
         }
-        if newText != "" {
+        if newText == "" {
+            textFieldWarningLabel.isHidden = false
+        } else {
             textView.text += newText + "\n" // 改行して追加
             textField.text = "" // 入力するごとに textField を空にする
             textFieldWarningLabel.isHidden = true
-        } else {
-            textFieldWarningLabel.isHidden = false
         }
     }
     
