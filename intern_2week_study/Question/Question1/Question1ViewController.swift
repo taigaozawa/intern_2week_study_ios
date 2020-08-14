@@ -18,16 +18,18 @@ final class Question1ViewController: UIViewController {
     
     // MARK: Action
     @IBAction func addTextButtonTapped(_ sender: UIButton) {
-        if let newText = textField.text {
-            if newText != "" {
-                textView.text += newText + "\n" // 改行して追加
-                textField.text = "" // 入力するごとに textField を空にする
-                textFieldWarningLabel.isHidden = true
-            } else {
-                textFieldWarningLabel.isHidden = false
-            }
+        guard let newText = textField.text else {
+            return
+        }
+        if newText != "" {
+            textView.text += newText + "\n" // 改行して追加
+            textField.text = "" // 入力するごとに textField を空にする
+            textFieldWarningLabel.isHidden = true
+        } else {
+            textFieldWarningLabel.isHidden = false
         }
     }
+    
     @IBAction func clearText(_ sender: UIButton) {
         textView.text = ""
     }
