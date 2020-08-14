@@ -26,6 +26,9 @@ extension Question2ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "question2Cell", for: indexPath) as? Question2Cell else {
             return UITableViewCell()
         }
+        
+        cell.setCellImageAndLabel(labelText: areaTexts[indexPath.row])
+        
         return cell
     }
 }
