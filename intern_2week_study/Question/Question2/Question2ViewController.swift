@@ -2,6 +2,7 @@ import UIKit
 
 final class Question2ViewController: UIViewController {
     
+    // MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     
     private let areaTexts: [String] = ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県"]
@@ -52,5 +53,20 @@ extension Question2ViewController: UITableViewDataSource {
 }
 
 extension Question2ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // cell がタップされたらアラートを表示
+        // アラートを定義
+        let alert = UIAlertController(title: self.areaTexts[indexPath.row], message: self.areaTexts[indexPath.row] + "が選択されました。", preferredStyle: UIAlertController.Style.alert)
+        // アラートのデフォルトアクションを定義
+        let defaultAction = UIAlertAction(
+            title: "OK",
+            style: UIAlertAction.Style.default,
+            handler: { _ in
+                print("ユーザーは" + self.areaTexts[indexPath.row] + "を選択し OK を押しました。")
+            })
+        // アラートにアクションを追加
+        alert.addAction(defaultAction)
+        // アラートを表示
+        present(alert, animated: true)
+    }
 }
