@@ -57,12 +57,12 @@ extension SearchViewController: UITextFieldDelegate {
     // キーワード検索を実行するメソッド
     func search(_ keyWord: String) {
         print("キーワードは「" + keyWord + "」です。")
-        self.performSegue(withIdentifier: "toResult", sender: nil)
+        self.performSegue(withIdentifier: "toArticleList", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toResult" {
-            guard let next = segue.destination as? ResultViewController else {
+        if segue.identifier == "toArticleList" {
+            guard let next = segue.destination as? ArticleListViewController else {
                 return
             }
             next.sentKeyWord = self.keyWord
