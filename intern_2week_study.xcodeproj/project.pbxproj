@@ -256,8 +256,8 @@
 		08C9DD8C24E013FB00459724 /* Question3 */ = {
 			isa = PBXGroup;
 			children = (
-				30F419E924E8337D009C42FD /* ArticleList */,
 				08C9DD9224E016E600459724 /* Search */,
+				30F419E924E8337D009C42FD /* ArticleList */,
 			);
 			path = Question3;
 			sourceTree = "<group>";

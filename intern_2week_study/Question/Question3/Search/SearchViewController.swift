@@ -54,12 +54,12 @@ extension SearchViewController: UITextFieldDelegate {
         return true
     }
     
-    // キーワード検索を実行するメソッド
+    // ArticleList に画面遷移
     func search(_ keyWord: String) {
-        print("キーワードは「" + keyWord + "」です。")
         self.performSegue(withIdentifier: "toArticleList", sender: nil)
     }
     
+    // ArticleListViewController に値を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toArticleList" {
             guard let next = segue.destination as? ArticleListViewController else {

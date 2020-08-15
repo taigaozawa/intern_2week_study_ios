@@ -13,70 +13,54 @@ class ArticleListViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     
-    private let articleTitles: [String] = ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県"]
-    private let articleImages: [String] = [
-        "https://uub.jp/47/ibaraki/ibaraki_kensho.png",
-        "https://uub.jp/47/ibaraki/ibaraki_kensho.png",
-        "https://uub.jp/47/ibaraki/ibaraki_kensho.png",
-        "https://uub.jp/47/ibaraki/ibaraki_kensho.png",
-        "https://uub.jp/47/ibaraki/ibaraki_kensho.png",
-        "https://uub.jp/47/ibaraki/ibaraki_kensho.png",
-        "https://uub.jp/47/ibaraki/ibaraki_kensho.png"
-    ]
+    var articles: [Article] = []
     
     var sentKeyWord: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // tableView の設定
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellReuseIdentifier: "articleListCell")
-        tableView.rowHeight = 50
+        guard let keyWord = sentKeyWord else { return }
+        print("キーワード「" + keyWord + "」で検索します😁")
         
-        // API をコールする
-        guard let keyWord = sentKeyWord else {
-            return
-        }
-        print("キーワード「" + keyWord + "」を受け取りました")
         callQiitaAPI(keyWord: keyWord)
+        
     }
     
-    private func callQiitaAPI(keyWord: String) {
-        /*
-        guard let url = URL(string: "https://qiita.com/api/v2/items") else { return }
-        
-        let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
-            
-            guard let jsonData = data else { return }
-            
-            print(jsonData)
-
-        })
-        
-        task.resume()
-        */
-        
-        print(keyWord + " を検索します。")
+    func callQiitaAPI(keyWord: String) {
+        APIClient.fetchArticles(keyword: keyWord) { [weak self] result in
+            DispatchQueue.main.sync {
+                switch result {
+                case .success(let articles):
+                    self?.articles = articles
+                    print("キーワード: ", keyWord, "\n記事数: ", articles.count, "\n検索が完了しました。🎉")
+                    // tableView の設定
+                    self?.tableView.delegate = self
+                    self?.tableView.dataSource = self
+                    self?.tableView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellReuseIdentifier: "articleListCell")
+                    self?.tableView.rowHeight = 50
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 
 }
 
 extension ArticleListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articleTitles.count
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard articleTitles.count == articleImages.count else {
-            return UITableViewCell()
-        }
         
-        let articleTitle = articleTitles[indexPath.row]
-        let articleImage = articleImages[indexPath.row]
+        let articleTitle = articles[indexPath.row].title
+        let articleImage = articles[indexPath.row].user?.profileImageUrl
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleListCell", for: indexPath) as? ArticleListCell, let articleImageURL = URL(string: articleImage) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleListCell", for: indexPath) as? ArticleListCell,
+            let articleImageURL = URL(string: articleImage!) else {
             return UITableViewCell()
         }
         
@@ -88,6 +72,6 @@ extension ArticleListViewController: UITableViewDataSource {
 
 extension ArticleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Hello")
+        print("「", articles[indexPath.row].title, "」が選択されました")
     }
 }
