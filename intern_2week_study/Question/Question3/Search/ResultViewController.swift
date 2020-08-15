@@ -19,6 +19,21 @@ class ResultViewController: UIViewController {
             return
         }
         print("キーワード「" + keyWord + "」を受け取りました。")
+        
+        let numberOfArticles = 50
+        callQiitaAPI(numberOfArticles: numberOfArticles)
+        
+    }
+    
+    private func callQiitaAPI(numberOfArticles: Int = 10) {
+        let url = "https://qiita.com/api/v2/items"
+        guard var urlComponents = URLComponents(string: url) else {
+            return
+        }
+        // urlComponents.string = "${url}?per_page=${numberOfArticles}" に設定
+        urlComponents.queryItems = [ URLQueryItem(name: "per_page", value: String(numberOfArticles)) ]
+        
+        print(urlComponents.string!)
     }
     
 }
