@@ -10,6 +10,11 @@ import UIKit
 
 class ArticleListViewController: UIViewController {
     
+    // MARK: Properties
+    @IBOutlet weak var articleListTableView: UITableView!
+    
+    private let areaTexts: [String] = ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県"]
+    
     var sentKeyWord: String?
 
     override func viewDidLoad() {
