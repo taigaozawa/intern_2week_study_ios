@@ -68,5 +68,4 @@ extension SearchViewController: UITextFieldDelegate {
             next.sentKeyWord = self.keyWord
         }
     }
-    
 }

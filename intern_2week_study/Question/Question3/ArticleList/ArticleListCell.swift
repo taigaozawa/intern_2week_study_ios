@@ -12,26 +12,14 @@ import UIKit
 class ArticleListCell: UITableViewCell {
     
     // MARK: Properties
- 
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var articleTitleLabel: UILabel!
     @IBOutlet weak var articleLGTMLabel: UILabel!
     @IBOutlet weak var articleLGTMNumberLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+
     func setCell(articleTitle: String, articleImageURL: URL, lgtm: Int) {
         articleTitleLabel.text = articleTitle
         articleLGTMNumberLabel.text = String(lgtm)
         Nuke.loadImage(with: articleImageURL, into: cellImageView)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
