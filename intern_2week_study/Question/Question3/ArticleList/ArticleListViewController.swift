@@ -6,6 +6,7 @@
 //  Copyright © 2020 caraquri. All rights reserved.
 //
 
+import SafariServices
 import UIKit
 
 class ArticleListViewController: UIViewController {
@@ -73,5 +74,12 @@ extension ArticleListViewController: UITableViewDataSource {
 extension ArticleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("「", articles[indexPath.row].title, "」が選択されました")
+        
+        let articleUrlString = articles[indexPath.row].url
+        guard let articleUrl = URL(string: articleUrlString) else {
+            return
+        }
+        let safariViewController = SFSafariViewController(url: articleUrl)
+        present(safariViewController, animated: true)
     }
 }
