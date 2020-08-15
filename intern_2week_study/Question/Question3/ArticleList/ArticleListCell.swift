@@ -14,15 +14,18 @@ class ArticleListCell: UITableViewCell {
     // MARK: Properties
  
     @IBOutlet weak var cellImageView: UIImageView!
-    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var articleTitleLabel: UILabel!
+    @IBOutlet weak var articleLGTMLabel: UILabel!
+    @IBOutlet weak var articleLGTMNumberLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func setCellImageAndLabel(labelText: String, imageURL: URL) {
-        cellLabel.text = labelText
-        Nuke.loadImage(with: imageURL, into: cellImageView)
+    func setCell(articleTitle: String, articleImageURL: URL, lgtm: Int) {
+        articleTitleLabel.text = articleTitle
+        articleLGTMNumberLabel.text = String(lgtm)
+        Nuke.loadImage(with: articleImageURL, into: cellImageView)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

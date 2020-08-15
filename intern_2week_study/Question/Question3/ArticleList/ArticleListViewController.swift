@@ -39,7 +39,7 @@ class ArticleListViewController: UIViewController {
                     self?.tableView.delegate = self
                     self?.tableView.dataSource = self
                     self?.tableView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellReuseIdentifier: "articleListCell")
-                    self?.tableView.rowHeight = 50
+                    self?.tableView.rowHeight = 100
                     
                 case .failure(let error):
                     print(error)
@@ -59,13 +59,14 @@ extension ArticleListViewController: UITableViewDataSource {
         
         let articleTitle = articles[indexPath.row].title
         let articleImage = articles[indexPath.row].user?.profileImageUrl
+        let lgtm = articles[indexPath.row].likesCount
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleListCell", for: indexPath) as? ArticleListCell,
             let articleImageURL = URL(string: articleImage!) else {
             return UITableViewCell()
         }
         
-        cell.setCellImageAndLabel(labelText: articleTitle, imageURL: articleImageURL)
+        cell.setCell(articleTitle: articleTitle, articleImageURL: articleImageURL, lgtm: lgtm)
         
         return cell
     }
