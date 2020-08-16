@@ -16,7 +16,7 @@ class ArticleListViewController: UIViewController {
     
     var articles: [Article] = []
     
-    var sentKeyWord: String?
+    var sentKeyWord: String? // SearchViewController から受け取る値
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +24,14 @@ class ArticleListViewController: UIViewController {
         guard let keyWord = sentKeyWord else { return }
         print("キーワード「" + keyWord + "」で検索します😁")
         tableView.rowHeight = 80
-        callQiitaAPI(keyWord: keyWord)
-        
+        displayArticles(keyWord: keyWord)
     }
     
-    func callQiitaAPI(keyWord: String) {
+    //
+    func displayArticles(keyWord: String) {
+        // Qiita の API を叩く
         APIClient.fetchArticles(keyword: keyWord) { [weak self] result in
+            // メインスレッドでの実行, 完了後に同期的に処理
             DispatchQueue.main.sync {
                 switch result {
                 case .success(let articles):
