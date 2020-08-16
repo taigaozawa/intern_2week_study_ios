@@ -23,7 +23,7 @@ class ArticleListViewController: UIViewController {
         
         guard let keyWord = sentKeyWord else { return }
         print("キーワード「" + keyWord + "」で検索します😁")
-        tableView.rowHeight = 100
+        tableView.rowHeight = 80
         callQiitaAPI(keyWord: keyWord)
         
     }
@@ -39,7 +39,7 @@ class ArticleListViewController: UIViewController {
                     self?.tableView.delegate = self
                     self?.tableView.dataSource = self
                     self?.tableView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellReuseIdentifier: "articleListCell")
-                    self?.tableView.rowHeight = 100
+                    self?.tableView.rowHeight = 80
                     
                 case .failure(let error):
                     print(error)
