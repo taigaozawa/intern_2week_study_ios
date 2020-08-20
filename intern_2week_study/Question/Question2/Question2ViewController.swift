@@ -46,7 +46,7 @@ extension Question2ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setCellImageAndLabel(labelText: areaText, imageURL: areaImageURL)
+        cell.setArea(areaText, withImageURL: areaImageURL)
         
         return cell
     }
