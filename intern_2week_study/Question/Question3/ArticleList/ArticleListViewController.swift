@@ -59,13 +59,15 @@ extension ArticleListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let articleTitle = articles[safe: indexPath.row]?.title,
-        let articleImage = articles[safe: indexPath.row]?.user?.profileImageUrl,
-        let lgtm = articles[safe: indexPath.row]?.likesCount,
-        let cell = tableView.dequeueReusableCell(withIdentifier: "articleListCell", for: indexPath) as? ArticleListCell,
-        let articleImageURL = URL(string: articleImage) else {
+        guard let article = articles[safe: indexPath.row],
+            let articleImage = article.user?.profileImageUrl,
+            let articleImageURL = URL(string: articleImage),
+            let cell = tableView.dequeueReusableCell(withIdentifier: "articleListCell", for: indexPath) as? ArticleListCell else {
             return UITableViewCell()
         }
+        
+        let articleTitle = article.title
+        let lgtm = article.likesCount
         
         cell.set(articleTitle, withArticleImage: articleImageURL, withLgtm: lgtm)
         
@@ -77,8 +79,8 @@ extension ArticleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("「", articles[indexPath.row].title, "」が選択されました")
         
-        let articleUrlString = articles[indexPath.row].url
-        guard let articleUrl = URL(string: articleUrlString) else {
+        guard let articleUrlString = articles[safe: indexPath.row]?.url,
+            let articleUrl = URL(string: articleUrlString) else {
             return
         }
         let safariViewController = SFSafariViewController(url: articleUrl)
