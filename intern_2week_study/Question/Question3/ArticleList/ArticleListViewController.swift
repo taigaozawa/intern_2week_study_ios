@@ -59,12 +59,11 @@ extension ArticleListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let articleTitle = articles[indexPath.row].title
-        let articleImage = articles[indexPath.row].user?.profileImageUrl
-        let lgtm = articles[indexPath.row].likesCount
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleListCell", for: indexPath) as? ArticleListCell,
-            let articleImageURL = URL(string: articleImage!) else {
+        guard let articleTitle = articles[safe: indexPath.row]?.title,
+        let articleImage = articles[safe: indexPath.row]?.user?.profileImageUrl,
+        let lgtm = articles[safe: indexPath.row]?.likesCount,
+        let cell = tableView.dequeueReusableCell(withIdentifier: "articleListCell", for: indexPath) as? ArticleListCell,
+        let articleImageURL = URL(string: articleImage) else {
             return UITableViewCell()
         }
         
