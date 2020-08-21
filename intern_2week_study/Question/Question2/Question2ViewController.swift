@@ -42,7 +42,8 @@ extension Question2ViewController: UITableViewDataSource {
         let areaText = areaTexts[indexPath.row]
         let areaImage = areaImages[indexPath.row]
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "question2Cell", for: indexPath) as? Question2Cell, let areaImageURL = URL(string: areaImage) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "question2Cell", for: indexPath) as? Question2Cell,
+            let areaImageURL = URL(string: areaImage) else {
             return UITableViewCell()
         }
         
