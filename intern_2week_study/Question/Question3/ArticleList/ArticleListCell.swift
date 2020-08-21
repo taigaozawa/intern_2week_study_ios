@@ -17,9 +17,9 @@ class ArticleListCell: UITableViewCell {
     @IBOutlet weak var articleLGTMLabel: UILabel!
     @IBOutlet weak var articleLGTMNumberLabel: UILabel!
 
-    func setCell(articleTitle: String, articleImageURL: URL, lgtm: Int) {
+    func set(_ articleTitle: String, withArticleImage: URL, withLgtm: Int) {
         articleTitleLabel.text = articleTitle
-        articleLGTMNumberLabel.text = String(lgtm)
-        Nuke.loadImage(with: articleImageURL, into: cellImageView)
+        articleLGTMNumberLabel.text = String(withLgtm)
+        Nuke.loadImage(with: withArticleImage, into: cellImageView)
     }
 }

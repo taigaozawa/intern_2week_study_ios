@@ -68,7 +68,7 @@ extension ArticleListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setCell(articleTitle: articleTitle, articleImageURL: articleImageURL, lgtm: lgtm)
+        cell.set(articleTitle, withArticleImage: articleImageURL, withLgtm: lgtm)
         
         return cell
     }
