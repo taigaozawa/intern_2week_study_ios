@@ -2,7 +2,70 @@ import UIKit
 
 final class SearchViewController: UIViewController {
     
+    // MARK: Properties
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var textFieldWarningLabel: UILabel!
+    
+    var keyWord = ""
+    
+    // 複数回検索防止のためのチェック
+    var isFirstSearch = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldWarningLabel.isHidden = true
+        textField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        isFirstSearch = true // 読み込みの度に検索可能にする
+    }
+    
+    // MARK: Action
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        _ = self.textFieldShouldReturn(textField)
+    }
+    
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    
+    // textField で Return されたときに呼び出されるメソッド
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 検索が 2 度以上行われていないかチェック
+        guard isFirstSearch else {
+            return true
+        }
+        
+        // キーボードを隠す
+        textField.resignFirstResponder() // FirstResponder を解除
+        guard let textFieldText = textField.text else {
+            return true
+        }
+        keyWord = textFieldText
+        if keyWord.isEmpty {
+            textFieldWarningLabel.isHidden = false
+        } else {
+            textFieldWarningLabel.isHidden = true
+            search(keyWord)
+            isFirstSearch = false // 有効な検索が行われたことを記録
+        }
+        return true
+    }
+    
+    // ArticleList に画面遷移
+    func search(_ keyWord: String) {
+        self.performSegue(withIdentifier: "toArticleList", sender: nil)
+    }
+    
+    // ArticleListViewController に値を渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toArticleList" {
+            guard let next = segue.destination as? ArticleListViewController else {
+                return
+            }
+            next.sentKeyWord = self.keyWord
+        }
     }
 }

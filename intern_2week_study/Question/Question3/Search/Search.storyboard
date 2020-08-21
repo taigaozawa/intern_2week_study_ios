@@ -15,13 +15,69 @@
                     <view key="view" contentMode="scaleToFill" id="xlp-gX-m4Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qiitaの記事を調べる" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL3-OJ-hxm">
+                                <rect key="frame" x="30" y="104" width="354" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="キーワードを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGW-gX-GvW">
+                                <rect key="frame" x="30" y="148" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  文字を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOy-OJ-D3t">
+                                <rect key="frame" x="30" y="187" width="165" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esd-6o-kzv">
+                                <rect key="frame" x="0.0" y="212" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="検索"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="hE7-Bk-rHS" eventType="touchUpInside" id="93z-Wn-uRQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="esd-6o-kzv" firstAttribute="top" secondItem="DGW-gX-GvW" secondAttribute="bottom" constant="30" id="P0n-dA-i69"/>
+                            <constraint firstItem="EnP-FA-CAh" firstAttribute="trailing" secondItem="DGW-gX-GvW" secondAttribute="trailing" constant="30" id="hn5-jj-Nhs"/>
+                            <constraint firstItem="DGW-gX-GvW" firstAttribute="top" secondItem="qL3-OJ-hxm" secondAttribute="bottom" constant="20" id="htK-jl-OfR"/>
+                            <constraint firstAttribute="trailing" secondItem="esd-6o-kzv" secondAttribute="trailing" id="i70-Oo-e64"/>
+                            <constraint firstItem="qL3-OJ-hxm" firstAttribute="top" secondItem="EnP-FA-CAh" secondAttribute="top" constant="60" id="l0V-4k-z04"/>
+                            <constraint firstItem="qL3-OJ-hxm" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="30" id="mCH-Vh-WbN"/>
+                            <constraint firstItem="DGW-gX-GvW" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="30" id="pLj-gw-6qd"/>
+                            <constraint firstItem="EnP-FA-CAh" firstAttribute="trailing" secondItem="qL3-OJ-hxm" secondAttribute="trailing" constant="30" id="quh-eL-98Q"/>
+                            <constraint firstItem="zOy-OJ-D3t" firstAttribute="top" secondItem="DGW-gX-GvW" secondAttribute="bottom" constant="5" id="rKQ-8a-dsj"/>
+                            <constraint firstItem="esd-6o-kzv" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" id="tAz-jY-hG8"/>
+                            <constraint firstItem="zOy-OJ-D3t" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="30" id="ulA-W5-HSK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EnP-FA-CAh"/>
                     </view>
+                    <connections>
+                        <outlet property="searchButton" destination="esd-6o-kzv" id="Yve-7W-1eg"/>
+                        <outlet property="textField" destination="DGW-gX-GvW" id="fRT-SN-Y2T"/>
+                        <outlet property="textFieldWarningLabel" destination="zOy-OJ-D3t" id="EU7-TI-0oi"/>
+                        <segue destination="Ztr-0x-WbS" kind="show" identifier="toArticleList" id="ety-7j-GTq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfg-6f-mrj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="121"/>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </scene>
+        <!--ArticleList-->
+        <scene sceneID="Pa2-ak-VqH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArticleList" id="Ztr-0x-WbS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="J33-Jd-t2H"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6eh-s9-JZ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="109"/>
         </scene>
     </scenes>
 </document>
