@@ -34,13 +34,10 @@ extension Question2ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard areaTexts.count == areaImages.count else {
-            print("areaTexts と areaImages の要素数が異なります。")
+        guard let areaText = areaTexts[safe: indexPath.row],
+            let areaImage = areaImages[safe: indexPath.row] else {
             return UITableViewCell()
         }
-        
-        let areaText = areaTexts[indexPath.row]
-        let areaImage = areaImages[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "question2Cell", for: indexPath) as? Question2Cell,
             let areaImageURL = URL(string: areaImage) else {
