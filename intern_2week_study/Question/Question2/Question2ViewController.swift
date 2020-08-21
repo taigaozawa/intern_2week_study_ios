@@ -56,7 +56,8 @@ extension Question2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // cell がタップされたらアラートを表示
         // アラートを定義
-        let alert = UIAlertController(title: self.areaTexts[indexPath.row], message: self.areaTexts[indexPath.row] + "が選択されました。", preferredStyle: UIAlertController.Style.alert)
+        let message = self.areaTexts[indexPath.row] + "が選択されました"
+        let alert = UIAlertController(title: self.areaTexts[indexPath.row], message: message, preferredStyle: .alert)
         // アラートのデフォルトアクションを定義
         let defaultAction = UIAlertAction(
             title: "OK",
